@@ -1,0 +1,213 @@
+{
+    "info": {
+        "name": "Simple Page Builder API",
+        "description": "Complete API collection for Simple Page Builder WordPress plugin",
+        "version": "1.0.0",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "https://yourdomain.com",
+            "description": "Your WordPress site URL"
+        },
+        {
+            "key": "api_key",
+            "value": "your_api_key_here",
+            "description": "Your API key from WordPress admin"
+        }
+    ],
+    "item": [
+        {
+            "name": "Health Check",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{base_url}}/wp-json/pagebuilder/v1/health",
+                    "host": ["{{base_url}}"],
+                    "path": ["wp-json", "pagebuilder", "v1", "health"]
+                },
+                "description": "Check if the API is healthy and accessible"
+            }
+        },
+        {
+            "name": "Create Single Page",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "X-API-Key",
+                        "value": "{{api_key}}"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"pages\": [\n    {\n      \"title\": \"About Us\",\n      \"content\": \"<p>This is our about page with <strong>HTML content</strong>.</p>\",\n      \"slug\": \"about-us\",\n      \"status\": \"publish\"\n    }\n  ]\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/wp-json/pagebuilder/v1/create-pages",
+                    "host": ["{{base_url}}"],
+                    "path": ["wp-json", "pagebuilder", "v1", "create-pages"]
+                },
+                "description": "Create a single page via API"
+            }
+        },
+        {
+            "name": "Create Multiple Pages",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "X-API-Key",
+                        "value": "{{api_key}}"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"pages\": [\n    {\n      \"title\": \"About Us\",\n      \"content\": \"<p>This is our about page.</p>\",\n      \"slug\": \"about-us\",\n      \"status\": \"publish\"\n    },\n    {\n      \"title\": \"Contact\",\n      \"content\": \"<p>Contact us at contact@example.com</p>\",\n      \"slug\": \"contact\",\n      \"status\": \"draft\"\n    },\n    {\n      \"title\": \"Services\",\n      \"content\": \"<p>Our services include web development and design.</p>\",\n      \"status\": \"publish\"\n    }\n  ]\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/wp-json/pagebuilder/v1/create-pages",
+                    "host": ["{{base_url}}"],
+                    "path": ["wp-json", "pagebuilder", "v1", "create-pages"]
+                },
+                "description": "Create multiple pages in a single request"
+            }
+        },
+        {
+            "name": "Create Page with Parent",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "X-API-Key",
+                        "value": "{{api_key}}"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"pages\": [\n    {\n      \"title\": \"Sub Page\",\n      \"content\": \"<p>This is a child page.</p>\",\n      \"parent_id\": 123,\n      \"status\": \"publish\"\n    }\n  ]\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/wp-json/pagebuilder/v1/create-pages",
+                    "host": ["{{base_url}}"],
+                    "path": ["wp-json", "pagebuilder", "v1", "create-pages"]
+                },
+                "description": "Create a page with a parent page (hierarchical)"
+            }
+        },
+        {
+            "name": "Create Pages with Webhook Override",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "X-API-Key",
+                        "value": "{{api_key}}"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"pages\": [\n    {\n      \"title\": \"Test Page\",\n      \"content\": \"<p>Test page with custom webhook.</p>\",\n      \"status\": \"publish\"\n    }\n  ],\n  \"webhook_url\": \"https://webhook.site/unique-uuid\"\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/wp-json/pagebuilder/v1/create-pages",
+                    "host": ["{{base_url}}"],
+                    "path": ["wp-json", "pagebuilder", "v1", "create-pages"]
+                },
+                "description": "Create pages with a custom webhook URL override"
+            }
+        },
+        {
+            "name": "Test Invalid API Key",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "X-API-Key",
+                        "value": "invalid_key"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"pages\": [\n    {\n      \"title\": \"Test Page\",\n      \"status\": \"publish\"\n    }\n  ]\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/wp-json/pagebuilder/v1/create-pages",
+                    "host": ["{{base_url}}"],
+                    "path": ["wp-json", "pagebuilder", "v1", "create-pages"]
+                },
+                "description": "Test error handling with invalid API key (should return 401)"
+            }
+        },
+        {
+            "name": "Test Missing API Key",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"pages\": [\n    {\n      \"title\": \"Test Page\",\n      \"status\": \"publish\"\n    }\n  ]\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/wp-json/pagebuilder/v1/create-pages",
+                    "host": ["{{base_url}}"],
+                    "path": ["wp-json", "pagebuilder", "v1", "create-pages"]
+                },
+                "description": "Test error handling with missing API key (should return 401)"
+            }
+        },
+        {
+            "name": "Test Invalid Data Format",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "X-API-Key",
+                        "value": "{{api_key}}"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"pages\": [\n    {\n      \"content\": \"Missing title field\",\n      \"status\": \"invalid_status\"\n    }\n  ]\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/wp-json/pagebuilder/v1/create-pages",
+                    "host": ["{{base_url}}"],
+                    "path": ["wp-json", "pagebuilder", "v1", "create-pages"]
+                },
+                "description": "Test error handling with invalid data format (should return 400)"
+            }
+        }
+    ]
+}

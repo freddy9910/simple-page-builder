@@ -1,0 +1,329 @@
+# Simple Page Builder Language Template
+# This file contains all translatable strings from the plugin
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Simple Page Builder 1.0.0\n"
+"POT-Creation-Date: 2025-11-24 14:30:00+0000\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# Main plugin strings
+msgid "Simple Page Builder"
+msgstr ""
+
+msgid "A WordPress plugin that creates bulk pages via secure REST API endpoint accessible from external applications."
+msgstr ""
+
+# Admin menu
+msgid "Page Builder"
+msgstr ""
+
+# Tab titles
+msgid "API Keys"
+msgstr ""
+
+msgid "Activity Log"
+msgstr ""
+
+msgid "Created Pages"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Documentation"
+msgstr ""
+
+# API Key management
+msgid "Generate New API Key"
+msgstr ""
+
+msgid "Key Name"
+msgstr ""
+
+msgid "Expiration"
+msgstr ""
+
+msgid "Never"
+msgstr ""
+
+msgid "30 days"
+msgstr ""
+
+msgid "60 days"
+msgstr ""
+
+msgid "90 days"
+msgstr ""
+
+msgid "1 year"
+msgstr ""
+
+msgid "A friendly name to identify this API key."
+msgstr ""
+
+msgid "When this API key should expire."
+msgstr ""
+
+msgid "API Key Generated Successfully"
+msgstr ""
+
+msgid "Important:"
+msgstr ""
+
+msgid "Save this API key securely. You will not be able to see it again."
+msgstr ""
+
+msgid "Your new API key:"
+msgstr ""
+
+msgid "Copy"
+msgstr ""
+
+msgid "I have saved the key"
+msgstr ""
+
+msgid "Existing API Keys"
+msgstr ""
+
+msgid "Refresh"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Key Preview"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Created"
+msgstr ""
+
+msgid "Last Used"
+msgstr ""
+
+msgid "Requests"
+msgstr ""
+
+msgid "Actions"
+msgstr ""
+
+msgid "Revoke"
+msgstr ""
+
+# Settings
+msgid "General Settings"
+msgstr ""
+
+msgid "API Access"
+msgstr ""
+
+msgid "Enable API access"
+msgstr ""
+
+msgid "Disable to temporarily block all API requests."
+msgstr ""
+
+msgid "Rate Limit"
+msgstr ""
+
+msgid "requests per hour per API key"
+msgstr ""
+
+msgid "Set to 0 for unlimited requests."
+msgstr ""
+
+msgid "Webhook Settings"
+msgstr ""
+
+msgid "Webhook URL"
+msgstr ""
+
+msgid "URL to receive webhook notifications when pages are created."
+msgstr ""
+
+msgid "Webhook Secret"
+msgstr ""
+
+msgid "Generate New"
+msgstr ""
+
+msgid "Secret key used to sign webhook payloads for security verification."
+msgstr ""
+
+msgid "Test Webhook"
+msgstr ""
+
+msgid "Save Settings"
+msgstr ""
+
+# Error messages
+msgid "Key name is required."
+msgstr ""
+
+msgid "Failed to create API key."
+msgstr ""
+
+msgid "API key is required."
+msgstr ""
+
+msgid "Invalid API key."
+msgstr ""
+
+msgid "Rate limit exceeded."
+msgstr ""
+
+msgid "API access is currently disabled."
+msgstr ""
+
+msgid "Insufficient permissions."
+msgstr ""
+
+msgid "Invalid key ID."
+msgstr ""
+
+msgid "Failed to revoke API key."
+msgstr ""
+
+msgid "API key revoked successfully."
+msgstr ""
+
+# Success messages
+msgid "Settings saved successfully."
+msgstr ""
+
+msgid "Webhook test successful!"
+msgstr ""
+
+msgid "Webhook test failed: "
+msgstr ""
+
+# Statistics
+msgid "Total Requests"
+msgstr ""
+
+msgid "Successful Requests"
+msgstr ""
+
+msgid "Pages Created"
+msgstr ""
+
+msgid "Avg Response Time"
+msgstr ""
+
+msgid "Last 30 days"
+msgstr ""
+
+msgid "Export CSV"
+msgstr ""
+
+# Activity log
+msgid "API Request Log"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "API Key"
+msgstr ""
+
+msgid "Endpoint"
+msgstr ""
+
+msgid "Response Time"
+msgstr ""
+
+msgid "IP Address"
+msgstr ""
+
+# Created pages
+msgid "Pages Created via API"
+msgstr ""
+
+msgid "Loading..."
+msgstr ""
+
+msgid "No pages have been created via the API yet."
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "URL"
+msgstr ""
+
+msgid "Created Date"
+msgstr ""
+
+# Documentation
+msgid "API Documentation"
+msgstr ""
+
+msgid "Base URL"
+msgstr ""
+
+msgid "Authentication"
+msgstr ""
+
+msgid "All API requests must include an API key in the request header:"
+msgstr ""
+
+msgid "Create Pages Endpoint"
+msgstr ""
+
+msgid "Request Body Example:"
+msgstr ""
+
+msgid "Request Parameters:"
+msgstr ""
+
+msgid "Response Example:"
+msgstr ""
+
+msgid "cURL Example"
+msgstr ""
+
+msgid "Rate Limiting"
+msgstr ""
+
+msgid "API requests are limited to %d requests per hour per API key."
+msgstr ""
+
+msgid "Rate limit information is included in response headers:"
+msgstr ""
+
+msgid "Webhook Notifications"
+msgstr ""
+
+msgid "When pages are successfully created, a webhook notification is sent to the configured URL:"
+msgstr ""
+
+msgid "Webhook Security"
+msgstr ""
+
+msgid "Webhook requests include a signature header for security verification:"
+msgstr ""
+
+msgid "Verify the signature using HMAC-SHA256 with your webhook secret."
+msgstr ""
+
+msgid "Error Responses"
+msgstr ""
+
+msgid "Error responses include appropriate HTTP status codes and error messages:"
+msgstr ""
+
+# JavaScript strings
+msgid "Are you sure you want to revoke this API key?"
+msgstr ""
+
+msgid "Copied to clipboard!"
+msgstr ""
+
+msgid "Failed to copy. Please select and copy manually."
+msgstr ""
